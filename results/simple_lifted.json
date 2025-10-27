@@ -1,0 +1,935 @@
+{
+  "name": "main",
+  "functions": {
+    "simple_add": {
+      "name": "simple_add",
+      "params": [
+        {
+          "name": "self",
+          "param_type": "TypeDecl(declname='self',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*"
+        },
+        {
+          "name": "args",
+          "param_type": "TypeDecl(declname='args',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*"
+        }
+      ],
+      "entry_point": "entry_0",
+      "blocks": {
+        "entry_0": {
+          "name": "entry_0",
+          "operations": [
+            {
+              "dest_var": "call_result_0",
+              "function_name": "PyArg_ParseTuple",
+              "args": [
+                {
+                  "name": "args"
+                },
+                {
+                  "const_type": "string",
+                  "value": "ll",
+                  "coord": "<stdin>:21:33"
+                },
+                {
+                  "op": "&",
+                  "operand": {
+                    "name": "a"
+                  },
+                  "coord": "<stdin>:21:40"
+                },
+                {
+                  "op": "&",
+                  "operand": {
+                    "name": "b"
+                  },
+                  "coord": "<stdin>:21:44"
+                }
+              ],
+              "coord": "<stdin>:21:10"
+            },
+            {
+              "op_type": "error-check",
+              "attributes": {
+                "source": "call_result_0"
+              },
+              "coord": "<stdin>:21:10"
+            }
+          ],
+          "terminator": {
+            "condition": {
+              "op": "==",
+              "left": {
+                "name": "call_result_0"
+              },
+              "right": {
+                "const_type": "auto",
+                "value": "0"
+              },
+              "coord": "<stdin>:21:10"
+            },
+            "true_target": "PyArg_ParseTuple_fail_2",
+            "false_target": "PyArg_ParseTuple_success_1",
+            "coord": "<stdin>:21:10"
+          },
+          "coord": "<stdin>:16:1"
+        },
+        "PyArg_ParseTuple_success_1": {
+          "name": "PyArg_ParseTuple_success_1",
+          "operations": [],
+          "terminator": {
+            "condition": {
+              "op": "!",
+              "operand": {
+                "name": "call_result_0"
+              },
+              "coord": "<stdin>:21:10"
+            },
+            "true_target": "if_then_3",
+            "false_target": "if_merge_5",
+            "coord": "<stdin>:21:5"
+          }
+        },
+        "PyArg_ParseTuple_fail_2": {
+          "name": "PyArg_ParseTuple_fail_2",
+          "operations": [],
+          "terminator": {
+            "value": {
+              "const_type": "int",
+              "value": -1
+            },
+            "coord": "<stdin>:21:10"
+          }
+        },
+        "if_then_3": {
+          "name": "if_then_3",
+          "operations": [],
+          "terminator": {
+            "value": {
+              "name": "NULL"
+            },
+            "coord": "<stdin>:22:9"
+          }
+        },
+        "if_else_4": {
+          "name": "if_else_4",
+          "operations": []
+        },
+        "if_merge_5": {
+          "name": "if_merge_5",
+          "operations": [
+            {
+              "dest_var": "call_result_1",
+              "function_name": "PyLong_FromLong",
+              "args": [
+                {
+                  "op": "+",
+                  "left": {
+                    "name": "a"
+                  },
+                  "right": {
+                    "name": "b"
+                  },
+                  "coord": "<stdin>:25:30"
+                }
+              ],
+              "coord": "<stdin>:25:14"
+            },
+            {
+              "op_type": "new-ref",
+              "attributes": {
+                "target": "call_result_1"
+              },
+              "coord": "<stdin>:25:14"
+            },
+            {
+              "target": {
+                "name": "result"
+              },
+              "value": {
+                "name": "call_result_1"
+              },
+              "coord": "<stdin>:25:5"
+            }
+          ],
+          "terminator": {
+            "value": {
+              "name": "result"
+            },
+            "coord": "<stdin>:26:5"
+          }
+        }
+      },
+      "local_vars": {
+        "a": "TypeDecl(declname='a',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['long'\n                                   ]\n                             )\n         )",
+        "b": "TypeDecl(declname='b',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['long'\n                                   ]\n                             )\n         )",
+        "result": "TypeDecl(declname='result',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*"
+      }
+    },
+    "create_squares": {
+      "name": "create_squares",
+      "params": [
+        {
+          "name": "self",
+          "param_type": "TypeDecl(declname='self',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*"
+        },
+        {
+          "name": "args",
+          "param_type": "TypeDecl(declname='args',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*"
+        }
+      ],
+      "entry_point": "entry_0",
+      "blocks": {
+        "entry_0": {
+          "name": "entry_0",
+          "operations": [
+            {
+              "dest_var": "call_result_0",
+              "function_name": "PyArg_ParseTuple",
+              "args": [
+                {
+                  "name": "args"
+                },
+                {
+                  "const_type": "string",
+                  "value": "i",
+                  "coord": "<stdin>:41:33"
+                },
+                {
+                  "op": "&",
+                  "operand": {
+                    "name": "n"
+                  },
+                  "coord": "<stdin>:41:39"
+                }
+              ],
+              "coord": "<stdin>:41:10"
+            },
+            {
+              "op_type": "error-check",
+              "attributes": {
+                "source": "call_result_0"
+              },
+              "coord": "<stdin>:41:10"
+            }
+          ],
+          "terminator": {
+            "condition": {
+              "op": "==",
+              "left": {
+                "name": "call_result_0"
+              },
+              "right": {
+                "const_type": "auto",
+                "value": "0"
+              },
+              "coord": "<stdin>:41:10"
+            },
+            "true_target": "PyArg_ParseTuple_fail_2",
+            "false_target": "PyArg_ParseTuple_success_1",
+            "coord": "<stdin>:41:10"
+          },
+          "coord": "<stdin>:34:1"
+        },
+        "PyArg_ParseTuple_success_1": {
+          "name": "PyArg_ParseTuple_success_1",
+          "operations": [],
+          "terminator": {
+            "condition": {
+              "op": "!",
+              "operand": {
+                "name": "call_result_0"
+              },
+              "coord": "<stdin>:41:10"
+            },
+            "true_target": "if_then_3",
+            "false_target": "if_merge_5",
+            "coord": "<stdin>:41:5"
+          }
+        },
+        "PyArg_ParseTuple_fail_2": {
+          "name": "PyArg_ParseTuple_fail_2",
+          "operations": [],
+          "terminator": {
+            "value": {
+              "const_type": "int",
+              "value": -1
+            },
+            "coord": "<stdin>:41:10"
+          }
+        },
+        "if_then_3": {
+          "name": "if_then_3",
+          "operations": [],
+          "terminator": {
+            "value": {
+              "name": "NULL"
+            },
+            "coord": "<stdin>:42:9"
+          }
+        },
+        "if_else_4": {
+          "name": "if_else_4",
+          "operations": []
+        },
+        "if_merge_5": {
+          "name": "if_merge_5",
+          "operations": [
+            {
+              "dest_var": "call_result_1",
+              "function_name": "PyList_New",
+              "args": [
+                {
+                  "name": "n"
+                }
+              ],
+              "coord": "<stdin>:45:12"
+            },
+            {
+              "op_type": "new-ref",
+              "attributes": {
+                "target": "call_result_1"
+              },
+              "coord": "<stdin>:45:12"
+            },
+            {
+              "op_type": "error-check",
+              "attributes": {
+                "source": "call_result_1"
+              },
+              "coord": "<stdin>:45:12"
+            }
+          ],
+          "terminator": {
+            "condition": {
+              "op": "==",
+              "left": {
+                "name": "call_result_1"
+              },
+              "right": {
+                "const_type": "void*",
+                "value": "NULL"
+              },
+              "coord": "<stdin>:45:12"
+            },
+            "true_target": "PyList_New_fail_7",
+            "false_target": "PyList_New_success_6",
+            "coord": "<stdin>:45:12"
+          }
+        },
+        "PyList_New_success_6": {
+          "name": "PyList_New_success_6",
+          "operations": [
+            {
+              "target": {
+                "name": "list"
+              },
+              "value": {
+                "name": "call_result_1"
+              },
+              "coord": "<stdin>:45:5"
+            }
+          ],
+          "terminator": {
+            "condition": {
+              "op": "!",
+              "operand": {
+                "name": "list"
+              },
+              "coord": "<stdin>:46:10"
+            },
+            "true_target": "if_then_8",
+            "false_target": "if_merge_10",
+            "coord": "<stdin>:46:5"
+          }
+        },
+        "PyList_New_fail_7": {
+          "name": "PyList_New_fail_7",
+          "operations": [],
+          "terminator": {
+            "value": {
+              "const_type": "int",
+              "value": -1
+            },
+            "coord": "<stdin>:45:12"
+          }
+        },
+        "if_then_8": {
+          "name": "if_then_8",
+          "operations": [],
+          "terminator": {
+            "value": {
+              "name": "NULL"
+            },
+            "coord": "<stdin>:47:9"
+          }
+        },
+        "if_else_9": {
+          "name": "if_else_9",
+          "operations": []
+        },
+        "if_merge_10": {
+          "name": "if_merge_10",
+          "operations": [
+            {
+              "target": {
+                "name": "i"
+              },
+              "value": {
+                "const_type": "int",
+                "value": 0,
+                "coord": "<stdin>:50:14"
+              },
+              "coord": "<stdin>:50:10"
+            }
+          ],
+          "terminator": {
+            "target": "for_header_11",
+            "coord": "<stdin>:50:5"
+          }
+        },
+        "for_header_11": {
+          "name": "for_header_11",
+          "operations": [],
+          "terminator": {
+            "condition": {
+              "op": "<",
+              "left": {
+                "name": "i"
+              },
+              "right": {
+                "name": "n"
+              },
+              "coord": "<stdin>:50:17"
+            },
+            "true_target": "for_body_12",
+            "false_target": "for_exit_14",
+            "coord": "<stdin>:50:5"
+          }
+        },
+        "for_body_12": {
+          "name": "for_body_12",
+          "operations": [
+            {
+              "dest_var": "call_result_2",
+              "function_name": "PyLong_FromLong",
+              "args": [
+                {
+                  "op": "*",
+                  "left": {
+                    "name": "i"
+                  },
+                  "right": {
+                    "name": "i"
+                  },
+                  "coord": "<stdin>:51:32"
+                }
+              ],
+              "coord": "<stdin>:51:16"
+            },
+            {
+              "op_type": "new-ref",
+              "attributes": {
+                "target": "call_result_2"
+              },
+              "coord": "<stdin>:51:16"
+            },
+            {
+              "target": {
+                "name": "item"
+              },
+              "value": {
+                "name": "call_result_2"
+              },
+              "coord": "<stdin>:51:9"
+            }
+          ],
+          "terminator": {
+            "condition": {
+              "op": "!",
+              "operand": {
+                "name": "item"
+              },
+              "coord": "<stdin>:52:14"
+            },
+            "true_target": "if_then_15",
+            "false_target": "if_merge_17",
+            "coord": "<stdin>:52:9"
+          }
+        },
+        "for_update_13": {
+          "name": "for_update_13",
+          "operations": [],
+          "terminator": {
+            "target": "for_header_11",
+            "coord": "<stdin>:50:5"
+          }
+        },
+        "for_exit_14": {
+          "name": "for_exit_14",
+          "operations": [],
+          "terminator": {
+            "value": {
+              "name": "list"
+            },
+            "coord": "<stdin>:64:5"
+          }
+        },
+        "if_then_15": {
+          "name": "if_then_15",
+          "operations": [
+            {
+              "dest_var": "call_result_3",
+              "function_name": "Py_DECREF",
+              "args": [
+                {
+                  "name": "list"
+                }
+              ],
+              "coord": "<stdin>:53:13"
+            }
+          ],
+          "terminator": {
+            "value": {
+              "name": "NULL"
+            },
+            "coord": "<stdin>:54:13"
+          }
+        },
+        "if_else_16": {
+          "name": "if_else_16",
+          "operations": []
+        },
+        "if_merge_17": {
+          "name": "if_merge_17",
+          "operations": [
+            {
+              "dest_var": "call_result_4",
+              "function_name": "PyList_SetItem",
+              "args": [
+                {
+                  "name": "list"
+                },
+                {
+                  "name": "i"
+                },
+                {
+                  "name": "item"
+                }
+              ],
+              "coord": "<stdin>:58:13"
+            },
+            {
+              "op_type": "steal-ref",
+              "attributes": {
+                "target": "i",
+                "func": "PyList_SetItem",
+                "arg_index": 1
+              },
+              "coord": "<stdin>:58:13"
+            },
+            {
+              "op_type": "error-check",
+              "attributes": {
+                "source": "call_result_4"
+              },
+              "coord": "<stdin>:58:13"
+            }
+          ],
+          "terminator": {
+            "condition": {
+              "op": "==",
+              "left": {
+                "name": "call_result_4"
+              },
+              "right": {
+                "const_type": "int",
+                "value": -1
+              },
+              "coord": "<stdin>:58:13"
+            },
+            "true_target": "PyList_SetItem_fail_19",
+            "false_target": "PyList_SetItem_success_18",
+            "coord": "<stdin>:58:13"
+          }
+        },
+        "PyList_SetItem_success_18": {
+          "name": "PyList_SetItem_success_18",
+          "operations": [],
+          "terminator": {
+            "condition": {
+              "op": "<",
+              "left": {
+                "name": "call_result_4"
+              },
+              "right": {
+                "const_type": "int",
+                "value": 0,
+                "coord": "<stdin>:58:45"
+              },
+              "coord": "<stdin>:58:13"
+            },
+            "true_target": "if_then_20",
+            "false_target": "if_merge_22",
+            "coord": "<stdin>:58:9"
+          }
+        },
+        "PyList_SetItem_fail_19": {
+          "name": "PyList_SetItem_fail_19",
+          "operations": [],
+          "terminator": {
+            "value": {
+              "const_type": "int",
+              "value": -1
+            },
+            "coord": "<stdin>:58:13"
+          }
+        },
+        "if_then_20": {
+          "name": "if_then_20",
+          "operations": [
+            {
+              "dest_var": "call_result_5",
+              "function_name": "Py_DECREF",
+              "args": [
+                {
+                  "name": "list"
+                }
+              ],
+              "coord": "<stdin>:59:13"
+            }
+          ],
+          "terminator": {
+            "value": {
+              "name": "NULL"
+            },
+            "coord": "<stdin>:60:13"
+          }
+        },
+        "if_else_21": {
+          "name": "if_else_21",
+          "operations": []
+        },
+        "if_merge_22": {
+          "name": "if_merge_22",
+          "operations": [],
+          "terminator": {
+            "target": "for_update_13",
+            "coord": "<stdin>:50:5"
+          }
+        }
+      },
+      "local_vars": {
+        "n": "TypeDecl(declname='n',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )",
+        "list": "TypeDecl(declname='list',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*",
+        "item": "TypeDecl(declname='item',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*",
+        "i": "TypeDecl(declname='i',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )"
+      }
+    },
+    "list_length": {
+      "name": "list_length",
+      "params": [
+        {
+          "name": "self",
+          "param_type": "TypeDecl(declname='self',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*"
+        },
+        {
+          "name": "obj",
+          "param_type": "TypeDecl(declname='obj',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*"
+        }
+      ],
+      "entry_point": "entry_0",
+      "blocks": {
+        "entry_0": {
+          "name": "entry_0",
+          "operations": [
+            {
+              "dest_var": "call_result_0",
+              "function_name": "PyList_Check",
+              "args": [
+                {
+                  "name": "obj"
+                }
+              ],
+              "coord": "<stdin>:76:10"
+            }
+          ],
+          "terminator": {
+            "condition": {
+              "op": "!",
+              "operand": {
+                "name": "call_result_0"
+              },
+              "coord": "<stdin>:76:10"
+            },
+            "true_target": "if_then_1",
+            "false_target": "if_merge_3",
+            "coord": "<stdin>:76:5"
+          },
+          "coord": "<stdin>:72:1"
+        },
+        "if_then_1": {
+          "name": "if_then_1",
+          "operations": [
+            {
+              "dest_var": "call_result_1",
+              "function_name": "PyErr_SetString",
+              "args": [
+                {
+                  "name": "PyExc_TypeError"
+                },
+                {
+                  "const_type": "string",
+                  "value": "Expected a list",
+                  "coord": "<stdin>:77:42"
+                }
+              ],
+              "coord": "<stdin>:77:9"
+            }
+          ],
+          "terminator": {
+            "value": {
+              "name": "NULL"
+            },
+            "coord": "<stdin>:78:9"
+          }
+        },
+        "if_else_2": {
+          "name": "if_else_2",
+          "operations": []
+        },
+        "if_merge_3": {
+          "name": "if_merge_3",
+          "operations": [
+            {
+              "dest_var": "call_result_2",
+              "function_name": "PyList_Size",
+              "args": [
+                {
+                  "name": "obj"
+                }
+              ],
+              "coord": "<stdin>:81:14"
+            },
+            {
+              "target": {
+                "name": "length"
+              },
+              "value": {
+                "name": "call_result_2"
+              },
+              "coord": "<stdin>:81:5"
+            }
+          ],
+          "terminator": {
+            "condition": {
+              "op": "<",
+              "left": {
+                "name": "length"
+              },
+              "right": {
+                "const_type": "int",
+                "value": 0,
+                "coord": "<stdin>:82:18"
+              },
+              "coord": "<stdin>:82:9"
+            },
+            "true_target": "if_then_4",
+            "false_target": "if_merge_6",
+            "coord": "<stdin>:82:5"
+          }
+        },
+        "if_then_4": {
+          "name": "if_then_4",
+          "operations": [],
+          "terminator": {
+            "value": {
+              "name": "NULL"
+            },
+            "coord": "<stdin>:83:9"
+          }
+        },
+        "if_else_5": {
+          "name": "if_else_5",
+          "operations": []
+        },
+        "if_merge_6": {
+          "name": "if_merge_6",
+          "operations": [
+            {
+              "dest_var": "call_result_3",
+              "function_name": "PyLong_FromSsize_t",
+              "args": [
+                {
+                  "name": "length"
+                }
+              ],
+              "coord": "<stdin>:86:12"
+            }
+          ],
+          "terminator": {
+            "value": {
+              "name": "call_result_3"
+            },
+            "coord": "<stdin>:86:5"
+          }
+        }
+      },
+      "local_vars": {
+        "length": "TypeDecl(declname='length',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['Py_ssize_t'\n                                   ]\n                             )\n         )"
+      }
+    },
+    "PyInit_simple_extension": {
+      "name": "PyInit_simple_extension",
+      "params": [],
+      "entry_point": "entry_0",
+      "blocks": {
+        "entry_0": {
+          "name": "entry_0",
+          "operations": [
+            {
+              "dest_var": "call_result_0",
+              "function_name": "PyModule_Create",
+              "args": [
+                {
+                  "op": "&",
+                  "operand": {
+                    "name": "simpleextension"
+                  },
+                  "coord": "<stdin>:119:29"
+                }
+              ],
+              "coord": "<stdin>:119:12"
+            },
+            {
+              "op_type": "new-ref",
+              "attributes": {
+                "target": "call_result_0"
+              },
+              "coord": "<stdin>:119:12"
+            },
+            {
+              "op_type": "error-check",
+              "attributes": {
+                "source": "call_result_0"
+              },
+              "coord": "<stdin>:119:12"
+            }
+          ],
+          "terminator": {
+            "condition": {
+              "op": "==",
+              "left": {
+                "name": "call_result_0"
+              },
+              "right": {
+                "const_type": "void*",
+                "value": "NULL"
+              },
+              "coord": "<stdin>:119:12"
+            },
+            "true_target": "PyModule_Create_fail_2",
+            "false_target": "PyModule_Create_success_1",
+            "coord": "<stdin>:119:12"
+          },
+          "coord": "<stdin>:117:1"
+        },
+        "PyModule_Create_success_1": {
+          "name": "PyModule_Create_success_1",
+          "operations": [],
+          "terminator": {
+            "value": {
+              "name": "call_result_0"
+            },
+            "coord": "<stdin>:119:5"
+          }
+        },
+        "PyModule_Create_fail_2": {
+          "name": "PyModule_Create_fail_2",
+          "operations": [],
+          "terminator": {
+            "value": {
+              "const_type": "int",
+              "value": -1
+            },
+            "coord": "<stdin>:119:12"
+          }
+        }
+      },
+      "local_vars": {}
+    }
+  },
+  "global_vars": {
+    "PyExc_TypeError": "TypeDecl(declname='PyExc_TypeError',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*",
+    "PyLong_FromSsize_t": "TypeDecl(declname='PyLong_FromSsize_t',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['Py_ssize_t'\n                                   ]\n                             )\n         ))",
+    "PyList_Size": "TypeDecl(declname='PyList_Size',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['Py_ssize_t'\n                                   ]\n                             )\n         )(TypeDecl(declname='list',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyLong_FromLong": "TypeDecl(declname='PyLong_FromLong',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['long'\n                                   ]\n                             )\n         ))",
+    "PyLong_FromUnsignedLong": "TypeDecl(declname='PyLong_FromUnsignedLong',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['unsigned',\n                                    'long'\n                                   ]\n                             )\n         ))",
+    "PyLong_FromLongLong": "TypeDecl(declname='PyLong_FromLongLong',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['long',\n                                    'long'\n                                   ]\n                             )\n         ))",
+    "PyFloat_FromDouble": "TypeDecl(declname='PyFloat_FromDouble',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['double'\n                                   ]\n                             )\n         ))",
+    "PyUnicode_FromString": "TypeDecl(declname='PyUnicode_FromString',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='u',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*)",
+    "PyUnicode_FromStringAndSize": "TypeDecl(declname='PyUnicode_FromStringAndSize',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='u',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*, TypeDecl(declname='size',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['Py_ssize_t'\n                                   ]\n                             )\n         ))",
+    "PyBytes_FromString": "TypeDecl(declname='PyBytes_FromString',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='v',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*)",
+    "PyBytes_FromStringAndSize": "TypeDecl(declname='PyBytes_FromStringAndSize',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='v',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*, TypeDecl(declname='len',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['Py_ssize_t'\n                                   ]\n                             )\n         ))",
+    "PyList_New": "TypeDecl(declname='PyList_New',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='len',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['Py_ssize_t'\n                                   ]\n                             )\n         ))",
+    "PyTuple_New": "TypeDecl(declname='PyTuple_New',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='len',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['Py_ssize_t'\n                                   ]\n                             )\n         ))",
+    "PyDict_New": "TypeDecl(declname='PyDict_New',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*()",
+    "Py_INCREF": "TypeDecl(declname='Py_INCREF',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )(TypeDecl(declname='op',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "Py_DECREF": "TypeDecl(declname='Py_DECREF',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )(TypeDecl(declname='op',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "Py_XINCREF": "TypeDecl(declname='Py_XINCREF',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )(TypeDecl(declname='op',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "Py_XDECREF": "TypeDecl(declname='Py_XDECREF',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )(TypeDecl(declname='op',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyList_GetItem": "TypeDecl(declname='PyList_GetItem',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='list',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='index',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['Py_ssize_t'\n                                   ]\n                             )\n         ))",
+    "PyList_SetItem": "TypeDecl(declname='PyList_SetItem',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='list',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='index',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['Py_ssize_t'\n                                   ]\n                             )\n         ), TypeDecl(declname='item',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyList_Append": "TypeDecl(declname='PyList_Append',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='list',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='item',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyTuple_GetItem": "TypeDecl(declname='PyTuple_GetItem',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='tuple',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='index',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['Py_ssize_t'\n                                   ]\n                             )\n         ))",
+    "PyTuple_SetItem": "TypeDecl(declname='PyTuple_SetItem',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='tuple',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='index',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['Py_ssize_t'\n                                   ]\n                             )\n         ), TypeDecl(declname='item',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyDict_GetItemString": "TypeDecl(declname='PyDict_GetItemString',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='key',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*)",
+    "PyDict_SetItemString": "TypeDecl(declname='PyDict_SetItemString',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='key',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*, TypeDecl(declname='val',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyDict_GetItem": "TypeDecl(declname='PyDict_GetItem',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='key',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyDict_SetItem": "TypeDecl(declname='PyDict_SetItem',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='key',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='val',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyLong_Check": "TypeDecl(declname='PyLong_Check',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyFloat_Check": "TypeDecl(declname='PyFloat_Check',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyUnicode_Check": "TypeDecl(declname='PyUnicode_Check',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyBytes_Check": "TypeDecl(declname='PyBytes_Check',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyList_Check": "TypeDecl(declname='PyList_Check',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyTuple_Check": "TypeDecl(declname='PyTuple_Check',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyDict_Check": "TypeDecl(declname='PyDict_Check',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyCallable_Check": "TypeDecl(declname='PyCallable_Check',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='p',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyArg_ParseTuple": "TypeDecl(declname='PyArg_ParseTuple',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='args',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='format',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*)",
+    "PyArg_ParseTupleAndKeywords": "TypeDecl(declname='PyArg_ParseTupleAndKeywords',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='args',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='kw',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='format',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*, TypeDecl(declname='kwlist',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )**)",
+    "PyErr_SetString": "TypeDecl(declname='PyErr_SetString',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )(TypeDecl(declname='exception',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='string',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*)",
+    "PyErr_Occurred": "TypeDecl(declname='PyErr_Occurred',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*()",
+    "PyErr_Clear": "TypeDecl(declname='PyErr_Clear',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )()",
+    "PyModule_Create": "TypeDecl(declname='PyModule_Create',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='def',\n         quals=[\n               ],\n         align=None,\n         type=Struct(name='PyModuleDef',\n                     decls=None\n                     )\n         )*)",
+    "PyObject_Str": "TypeDecl(declname='PyObject_Str',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyObject_Repr": "TypeDecl(declname='PyObject_Repr',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyObject_HasAttrString": "TypeDecl(declname='PyObject_HasAttrString',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='name',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*)",
+    "PyObject_GetAttrString": "TypeDecl(declname='PyObject_GetAttrString',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='name',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*)",
+    "PyObject_SetAttrString": "TypeDecl(declname='PyObject_SetAttrString',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='name',\n         quals=['const'\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*, TypeDecl(declname='w',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyObject_GetAttr": "TypeDecl(declname='PyObject_GetAttr',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='name',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyObject_SetAttr": "TypeDecl(declname='PyObject_SetAttr',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['int'\n                                   ]\n                             )\n         )(TypeDecl(declname='v',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='name',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='w',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyNumber_Add": "TypeDecl(declname='PyNumber_Add',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='o1',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='o2',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyNumber_Subtract": "TypeDecl(declname='PyNumber_Subtract',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='o1',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='o2',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyNumber_Multiply": "TypeDecl(declname='PyNumber_Multiply',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='o1',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='o2',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyNumber_TrueDivide": "TypeDecl(declname='PyNumber_TrueDivide',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='o1',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='o2',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyNumber_FloorDivide": "TypeDecl(declname='PyNumber_FloorDivide',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='o1',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='o2',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyNumber_Remainder": "TypeDecl(declname='PyNumber_Remainder',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='o1',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='o2',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyNumber_Power": "TypeDecl(declname='PyNumber_Power',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='o1',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='o2',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*, TypeDecl(declname='o3',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyNumber_Negative": "TypeDecl(declname='PyNumber_Negative',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='o',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyNumber_Positive": "TypeDecl(declname='PyNumber_Positive',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='o',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyNumber_Absolute": "TypeDecl(declname='PyNumber_Absolute',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*(TypeDecl(declname='o',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*)",
+    "PyLong_AsLong": "TypeDecl(declname='PyLong_AsLong',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['long'\n                                   ]\n                             )\n         )()",
+    "PyLong_AsLongLong": "TypeDecl(declname='PyLong_AsLongLong',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['long',\n                                    'long'\n                                   ]\n                             )\n         )()",
+    "PyFloat_AsDouble": "TypeDecl(declname='PyFloat_AsDouble',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['double'\n                                   ]\n                             )\n         )()",
+    "PyUnicode_AsUTF8": "TypeDecl(declname='PyUnicode_AsUTF8',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*()",
+    "PyUnicode_AsUTF8AndSize": "TypeDecl(declname='PyUnicode_AsUTF8AndSize',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['char'\n                                   ]\n                             )\n         )*()",
+    "PyObject_GetIter": "TypeDecl(declname='PyObject_GetIter',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*()",
+    "PyIter_Next": "TypeDecl(declname='PyIter_Next',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyObject'\n                                   ]\n                             )\n         )*()",
+    "PyMem_Malloc": "TypeDecl(declname='PyMem_Malloc',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )*(TypeDecl(declname='size',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['size_t'\n                                   ]\n                             )\n         ))",
+    "PyMem_Realloc": "TypeDecl(declname='PyMem_Realloc',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )*(TypeDecl(declname='ptr',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )*, TypeDecl(declname='newsize',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['size_t'\n                                   ]\n                             )\n         ))",
+    "PyMem_Free": "TypeDecl(declname='PyMem_Free',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )(TypeDecl(declname='ptr',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )*)",
+    "PyMem_Calloc": "TypeDecl(declname='PyMem_Calloc',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['void'\n                                   ]\n                             )\n         )*(TypeDecl(declname='nelem',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['size_t'\n                                   ]\n                             )\n         ), TypeDecl(declname='elsize',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['size_t'\n                                   ]\n                             )\n         ))",
+    "SimpleExtensionMethods": "TypeDecl(declname='SimpleExtensionMethods',\n         quals=[\n               ],\n         align=None,\n         type=IdentifierType(names=['PyMethodDef'\n                                   ]\n                             )\n         )[]",
+    "simpleextension": "TypeDecl(declname='simpleextension',\n         quals=[\n               ],\n         align=None,\n         type=Struct(name='PyModuleDef',\n                     decls=None\n                     )\n         )"
+  },
+  "includes": []
+}
